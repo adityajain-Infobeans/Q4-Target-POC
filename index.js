@@ -23,8 +23,8 @@ User register & login
 */
 
 app.use('/auth', db_connect, userAuth);
-app.use('/list', db_connect, listOperations);
-app.use('/task', db_connect, taskOperations);
+app.use('/list', db_connect, checkAuth, listOperations);
+app.use('/task', db_connect, checkAuth, taskOperations);
 
 app.listen(process.env.PORT || port);
 
