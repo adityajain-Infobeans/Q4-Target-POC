@@ -139,7 +139,7 @@ router.post('/login', async function (req, res) {
 
     // generate JWT
     const jwtToken = await jwt.sign(
-      { registeredUserName, registeredUserUuid },
+      { name: registeredUserName, uuid: registeredUserUuid },
       process.env.JWT_SECRET
     );
 

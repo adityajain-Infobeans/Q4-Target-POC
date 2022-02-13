@@ -62,7 +62,8 @@ function checkAuth(req, res, next) {
         });
         return;
       }
-      req.body.employee_data = data;
+
+      req.body.uuid = data.uuid;
       next();
     });
   } else {
