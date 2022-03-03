@@ -3,12 +3,13 @@ const router = express.Router();
 const taskSchema = require('../model/taskModel');
 const Joi = require('joi');
 
-router.get('/:taskId?', async function (req, res) {
+router.get('/:listId/:taskId?', async function (req, res) {
   // show all lits of this user or show single list
   try {
     // create new task for this user
-    const { uuid, listId } = req.body;
+    const { uuid } = req.body;
     const taskId = req.params.taskId;
+    const listId = req.params.listId
 
     const listTitleSchema = Joi.object({
       taskId: Joi.string().min(24).max(24),
@@ -66,6 +67,12 @@ router.get('/:taskId?', async function (req, res) {
   }
 });
 
+/*
+{
+    "task_description": [string],
+    "listId": [string]
+}
+*/
 router.post('/', async function (req, res) {
   try {
     // create new task for this user

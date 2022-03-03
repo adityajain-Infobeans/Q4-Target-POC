@@ -10,10 +10,10 @@ require('dotenv').config();
   This route is for registering new user. 
   It required user data to be sent with the request body
   Structure: {
-    user_name: [string], 
-    user_email: [string], 
-    user_password: [string], 
-    user_confirm_password: [string]
+    "user_name": [string], 
+    "user_email": [string], 
+    "user_password": [string], 
+    "user_confirm_password": [string]
   }
 */
 router.post('/register', async function (req, res) {
@@ -86,8 +86,8 @@ router.post('/register', async function (req, res) {
   This route is for signing in registered user. 
   It required user data to be sent with the request body
   Structure: {
-    user_email: [string], 
-    user_password: [string], 
+    "user_email": [string], 
+    "user_password": [string], 
   }
 */
 router.post('/login', async function (req, res) {

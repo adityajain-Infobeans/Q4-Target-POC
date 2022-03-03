@@ -3,6 +3,9 @@ const router = express.Router();
 const listSchema = require('../model/listModel');
 const Joi = require('joi');
 
+/*
+
+*/
 router.get('/:listId?', async function (req, res) {
   // show all lits of this user or show single list
   try {
@@ -63,6 +66,11 @@ router.get('/:listId?', async function (req, res) {
   }
 });
 
+/*
+  {
+    "title": [string]
+  }
+*/
 router.post('/', async function (req, res) {
   try {
     // create new list for this user
@@ -101,6 +109,9 @@ router.post('/', async function (req, res) {
   }
 });
 
+/*
+
+*/
 router.put('/:listId', async function (req, res) {
   // update this list
   try {
@@ -151,6 +162,9 @@ router.put('/:listId', async function (req, res) {
   }
 });
 
+/*
+
+*/
 router.delete('/:listId', async function (req, res) {
   // delete this list
   try {
